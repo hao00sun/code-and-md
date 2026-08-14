@@ -1,0 +1,142 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/SUN_ht/Isaac_Gym/IsaacLab_v2.2.1/apps/isaaclab.python.headless.rendering.kit
+[Warning] [simulation_app.simulation_app] Modules: ['omni.kit_app'] were loaded before SimulationApp was started and might not be loaded correctly.
+[Warning] [simulation_app.simulation_app] Please check to make sure no extra omniverse or pxr modules are imported before the call to SimulationApp(...)
+Loading user config located at: '/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/omni/data/Kit/Isaac-Sim/5.0/user.config.json'
+[Info] [carb] Logging to file: /data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/omni/logs/Kit/Isaac-Sim/5.0/kit_20260810_111956.log
+2026-08-10T03:19:56Z [359ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) Graphics (RPL-S)
+2026-08-10T03:19:56Z [359ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) Graphics (RPL-S)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.178.04    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4090          | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2684      | 68e2be1b.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | Intel(R) Graphics (RPL-S)        |        |     | 96426   MB | 8086      | 0          |
+|     |                                  |        |     |            | a780      | 868080a7.. |
+|     |                                  |        |     |            | 0         |            |
+|=============================================================================================|
+| OS: 24.04.4 LTS (Noble Numbat) ubuntu, Version: 24.04.4, Kernel: 7.0.0-28-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101011 (1.21.1.11)
+| Processor: Intel(R) Core(TM) i9-14900K
+| Cores: 24 | Logical Cores: 32
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 128568 | Free Memory: 120316
+| Total Page/Swap (MB): 8191 | Free Page/Swap: 8191
+|---------------------------------------------------------------------------------------------|
+2026-08-10T03:19:57Z [596ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-08-10T03:19:57Z [599ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-08-10T03:19:57Z [599ms] [Warning] [gpu.foundation.plugin] Detected IOMMU is enabled. Running CUDA peer-to-peer bandwidth and latency validation.
+Unidirectional P2P=Enabled Bandwidth (P2P Writes) Matrix (GB/s)
+   D\D     0 
+     0 897.54 
+P2P=Enabled Latency (P2P Writes) Matrix (us)
+   GPU     0 
+     0   6.11 
+
+   CPU     0 
+     0   8.24 
+2026-08-10T03:19:57Z [1,395ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-08-10T03:19:58Z [1,664ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-08-10T03:19:59Z [3,000ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+Warp CUDA error: Failed to get driver entry point 'cuDeviceGetUuid' (CUDA error 1)
+Warp CUDA error: Function cuDeviceGetUuid_f: a suitable driver entry point was not found
+Warp CUDA error 36: API call is not supported in the installed CUDA driver (in function cuda_init, /builds/omniverse/warp/warp/native/warp.cu:277)
+2026-08-10T03:19:59Z [3,134ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-08-10T03:20:01Z [4,932ms] [Warning] [usdrt.population.plugin] using high frequency span is disabled
+2026-08-10T03:20:01Z [5,006ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [carb::dictionary::ISerializer v1.1] (plugin: carb.dictionary.serializer-json.plugin), by client: carb.scenerenderer-rtx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-08-10T03:20:02Z [6,183ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+2026-08-10T03:20:02Z [6,184ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+2026-08-10T03:20:02Z [6,184ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span with attrs is disabled
+2026-08-10T03:20:02Z [6,188ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-08-10T03:20:02Z [6,193ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+2026-08-10T03:20:02Z [6,193ms] [Warning] [usdrt.hydra.fabric_scene_delegate.plugin] using high frequency span is disabled
+[INFO]: Parsing configuration from: <class 'dextrah_lab.tasks.dextrah_kuka_allegro.dextrah_kuka_allegro_env_cfg.DextrahKukaAllegroEnvCfg'>
+[INFO]: Parsing configuration from: /data/SUN_ht/Isaac_Gym/DEXTRAH/dextrah_lab/tasks/dextrah_kuka_allegro/agents/rl_games_ppo_lstm_cfg.yaml
+2026-08-10T03:20:05Z [8,850ms] [Warning] [isaaclab.envs.direct_rl_env] Seed not set for the environment. The environment creation may not be deterministic.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.016666666666666666
+	Environment step-size : 0.016666666666666666
+2026-08-10T03:20:07Z [10,921ms] [Warning] [isaaclab.scene.interactive_scene] Collision filtering can only be automatically enabled when replicate_physics=True and using GPU simulation. Please call scene.filter_collisions(global_prim_paths) to filter collisions across environments.
+Loading 8 object instances from /data/SUN_ht/Isaac_Gym/DEXTRAH/dextrah_lab/assets/visdex_objects/USD (8/152 unique objects, subset start=0, size=8)
+Loading objects: 1/8 (12.5%) latest=104738
+Loading objects: 2/8 (25.0%) latest=109zjaf9
+Loading objects: 3/8 (37.5%) latest=110699
+Loading objects: 4/8 (50.0%) latest=116867
+Loading objects: 5/8 (62.5%) latest=116873
+Loading objects: 6/8 (75.0%) latest=14tegvzr
+Loading objects: 7/8 (87.5%) latest=14yy2ntz
+Loading objects: 8/8 (100.0%) latest=15cfi6q3
+[INFO]: Time taken for scene creation : 3.082847 seconds
+Error executing job with overrides: ['env.distillation=True', 'env.simulate_stereo=False', 'env.objects_dir=visdex_objects', 'env.use_object_subset=True', 'env.object_subset_size=8', 'env.object_subset_start_index=0', 'env.max_pose_angle=45.0', 'env.adr_custom_cfg_dict.fabric_damping.gain=[10.0, 20.0]', 'env.adr_custom_cfg_dict.reward_weights.finger_curl_reg=[-0.01, -0.01]', 'env.adr_custom_cfg_dict.reward_weights.lift_weight=[5.0, 0.0]', 'env.use_cuda_graph=False']
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/DEXTRAH/dextrah_lab/distillation/run_distillation.py", line 203, in <module>
+[rank0]:     main()
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/IsaacLab_v2.2.1/source/isaaclab_tasks/isaaclab_tasks/utils/hydra.py", line 104, in wrapper
+[rank0]:     hydra_main()
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+[rank0]:     _run_hydra(
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank0]:     _run_app(
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank0]:     run_and_report(
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+[rank0]:     raise ex
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank0]:     return func()
+[rank0]:            ^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank0]:     lambda: hydra.run(
+[rank0]:             ^^^^^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+[rank0]:     _ = ret.return_value
+[rank0]:         ^^^^^^^^^^^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/core/utils.py", line 260, in return_value
+[rank0]:     raise self._return_value
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank0]:     ret.return_value = task_function(task_cfg)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/IsaacLab_v2.2.1/source/isaaclab_tasks/isaaclab_tasks/utils/hydra.py", line 101, in hydra_main
+[rank0]:     func(env_cfg, agent_cfg, *args, **kwargs)
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/DEXTRAH/dextrah_lab/distillation/run_distillation.py", line 104, in main
+[rank0]:     env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/site-packages/gymnasium/envs/registration.py", line 734, in make
+[rank0]:     env = env_creator(**env_spec_kwargs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/DEXTRAH/dextrah_lab/tasks/dextrah_kuka_allegro/dextrah_kuka_allegro_env.py", line 87, in __init__
+[rank0]:     super().__init__(cfg, render_mode, **kwargs)
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/IsaacLab_v2.2.1/source/isaaclab/isaaclab/envs/direct_rl_env.py", line 131, in __init__
+[rank0]:     self._setup_scene()
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/DEXTRAH/dextrah_lab/tasks/dextrah_kuka_allegro/dextrah_kuka_allegro_env.py", line 482, in _setup_scene
+[rank0]:     dome_light_texture = random.choice(self.dome_light_files)
+[rank0]:                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/data/SUN_ht/Isaac_Gym/env_dextrah/lib/python3.11/random.py", line 373, in choice
+[rank0]:     raise IndexError('Cannot choose from an empty sequence')
+[rank0]: IndexError: Cannot choose from an empty sequence
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Annotators' for removal
+2026-08-10T03:20:08Z [12,248ms] [Warning] [omni.graph.core.plugin] Could not find category 'Replicator:Core' for removal
+2026-08-10T03:20:08Z [12,250ms] [Warning] [omni.physx.plugin] USD stage detach not called, holding a loose ptr to a stage!
+2026-08-10T03:20:08Z [12,253ms] [Warning] [omni.fabric.plugin] gFabricState->gUsdStageToSimStageWithHistoryMap had 1 outstanding SimStageWithHistory(s) at shutdown
+2026-08-10T03:20:08Z [12,289ms] [Warning] [carb] Recursive unloadAllPlugins() detected!
