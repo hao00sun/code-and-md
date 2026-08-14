@@ -1,0 +1,62 @@
+dataset:
+  repo_id: arx_bimanual_0624_0625merged
+  root: /media/wu/data/SUN_ht/datasets/arx_bimanual_0624_0625merged
+  return_uint8: true
+
+# The 14-dim flow-matching checkpoint uses image keys:
+#   observation.images.left / top / right
+# Your ARX dataset uses:
+#   observation.images.left_hand / top / right_hand
+# Rename dataset observations into the pretrained policy's expected names.
+rename_map:
+  observation.images.left_hand: observation.images.left
+  observation.images.right_hand: observation.images.right
+
+policy:
+  path: /media/wu/data/SUN_ht/dit/pretrained_weights/multi_task_dit_flow_matching_14d_base
+
+  repo_id: wu/multi-task-dit-flow-arx-bimanual
+  device: cuda
+  use_amp: true
+  push_to_hub: false
+
+  objective: flow_matching
+  sigma_min: 0.0
+  num_integration_steps: 100
+  integration_method: euler
+  timestep_sampling_strategy: beta
+  timestep_sampling_s: 0.999
+  timestep_sampling_alpha: 1.5
+  timestep_sampling_beta: 1.0
+
+  n_obs_steps: 2
+  horizon: 32
+  n_action_steps: 24
+
+  hidden_dim: 512
+  num_layers: 6
+  num_heads: 8
+  dropout: 0.1
+  use_rope: true
+  use_positional_encoding: false
+
+  vision_encoder_name: openai/clip-vit-base-patch16
+  text_encoder_name: openai/clip-vit-base-patch16
+  tokenizer_max_length: 77
+  image_crop_shape: [224, 224]
+  image_crop_is_random: true
+  use_separate_rgb_encoder_per_camera: false
+  vision_encoder_lr_multiplier: 0.05
+
+output_dir: /media/wu/data/SUN_ht/dit/runs/multi_task_dit_flow_matching_arx
+job_name: multi_task_dit_flow_matching_arx
+
+batch_size: 32
+steps: 50000
+save_freq: 1000
+log_freq: 20
+num_workers: 4
+eval_freq: 0
+
+wandb:
+  enable: false

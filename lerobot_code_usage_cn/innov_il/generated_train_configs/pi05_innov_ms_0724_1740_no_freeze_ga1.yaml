@@ -1,0 +1,31 @@
+dataset:
+  repo_id: innov_ms_0724_1740
+  root: /data/SUN_ht/roboploy/robodeploy/outputs/innov_ms_0724_1740
+policy:
+  type: pi05
+  repo_id: wu/pi05_innov_ms_0724_1740_no_freeze_ga1
+  pretrained_path: /data/SUN_ht/pi/pretrained_weights/pi05_base
+  compile_model: false
+  gradient_checkpointing: true
+  dtype: bfloat16
+  freeze_vision_encoder: false
+  train_expert_only: false
+  device: cuda
+  normalization_mapping:
+    ACTION: MEAN_STD
+    STATE: MEAN_STD
+    VISUAL: IDENTITY
+  push_to_hub: false
+
+output_dir: /mnt/bigdata/SUN_ht/runs/pi05_innov_ms_0724_1740_no_freeze_ga1_{timestamp}
+log_dir: /data/SUN_ht/pi/logs/pi05_innov_ms_0724_1740_no_freeze_ga1_{timestamp}
+job_name: pi05_innov_ms_0724_1740_no_freeze_ga1
+batch_size: 16
+gradient_accumulation_steps: 1
+steps: 12000
+save_freq: 2000
+log_freq: 20
+num_workers: 4
+
+wandb:
+  enable: false

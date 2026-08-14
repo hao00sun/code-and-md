@@ -1,0 +1,72 @@
+dataset:
+  repo_id: innov_0617_1554
+  root: /media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/innov/innov_0617_1554
+
+policy:
+  type: multi_task_dit
+  objective: flow_matching
+  repo_id: wu/flow-matching-innov-0617-1554
+  push_to_hub: false
+  device: cuda
+  use_amp: false
+
+  # All three camera videos have been cropped to the same 640x480 shape.
+  input_features:
+    observation.state:
+      type: STATE
+      shape: [14]
+    observation.images.left_wrist:
+      type: VISUAL
+      shape: [3, 480, 640]
+    observation.images.right_wrist:
+      type: VISUAL
+      shape: [3, 480, 640]
+    observation.images.front:
+      type: VISUAL
+      shape: [3, 480, 640]
+  output_features:
+    action:
+      type: ACTION
+      shape: [14]
+
+  # Use observations at t-2, t-1 and t.
+  n_obs_steps: 3
+  horizon: 64
+  n_action_steps: 50
+  drop_n_last_frames: 12
+
+  vision_encoder_name: /media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/innov/innov_il/follow/pretrained_weights/clip-vit-base-patch16
+  text_encoder_name: /media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/innov/innov_il/follow/pretrained_weights/clip-vit-base-patch16
+  image_resize_shape: [224, 224]
+  image_crop_shape: null
+  use_separate_rgb_encoder_per_camera: false
+
+  hidden_dim: 512
+  num_layers: 6
+  num_heads: 8
+  dropout: 0.1
+
+  sigma_min: 0.0
+  num_integration_steps: 50
+  integration_method: rk4
+  timestep_sampling_strategy: beta
+  timestep_sampling_s: 0.999
+  timestep_sampling_alpha: 1.5
+  timestep_sampling_beta: 1.0
+
+  normalization_mapping:
+    VISUAL: MEAN_STD
+    STATE: MIN_MAX
+    ACTION: MIN_MAX
+
+output_dir: /media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/innov/innov_il/follow/runs/direct_config_run
+job_name: flow_matching_innov_0617_1554
+batch_size: 16
+steps: 30000
+save_freq: 5000
+log_freq: 50
+num_workers: 4
+eval_freq: 0
+
+wandb:
+  enable: false

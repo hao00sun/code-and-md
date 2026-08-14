@@ -1,0 +1,29 @@
+dataset:
+  repo_id: innov_0730_merged_v30
+  root: /data/SUN_ht/datasets/innov_0730_merged_v30
+policy:
+  type: pi05
+  repo_id: wu/pi05-innov-0720-merged-v30
+  pretrained_path: /data/SUN_ht/pi/pretrained_weights/pi05_base
+  compile_model: false
+  gradient_checkpointing: true
+  dtype: bfloat16
+  freeze_vision_encoder: false
+  train_expert_only: false
+  device: cuda
+  normalization_mapping:
+    ACTION: MEAN_STD
+    STATE: MEAN_STD
+    VISUAL: IDENTITY
+  push_to_hub: false
+output_dir: /mnt/bigdata/SUN_ht/runs/pi05_innov_0730_merged_4cam_v30_{timestamp}
+log_dir: /data/SUN_ht/pi/logs/pi05_innov_0730_merged_4cam_v30_{timestamp}
+job_name: pi05_innov_0730_merged_4cam_v30
+batch_size: 16
+gradient_accumulation_steps: 1
+steps: 16000
+save_freq: 2000
+log_freq: 20
+num_workers: 4
+wandb:
+  enable: false

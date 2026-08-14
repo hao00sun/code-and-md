@@ -1,0 +1,62 @@
+{
+  "dataset": {
+    "repo_id": "arx_reward_classifier_terminal",
+    "root": "/media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/datasets/arx5/arx_reward_classifier_terminal_v30",
+    "episodes": null
+  },
+
+  "reward_model": {
+    "type": "reward_classifier",
+    "model_name": "/media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/hil-serl/pretrained_models/lerobot_resnet10",
+    "model_type": "cnn",
+    "num_cameras": 3,
+    "num_classes": 2,
+    "hidden_dim": 256,
+    "latent_dim": 256,
+    "image_embedding_pooling_dim": 8,
+    "dropout_rate": 0.1,
+    "learning_rate": 0.00003,
+    "weight_decay": 0.01,
+    "grad_clip_norm": 0.5,
+    "device": "cuda",
+
+    "label_key": "index",
+    "label_lookup_root": "/media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/datasets/arx5/arx_reward_classifier_terminal_v30",
+    "label_lookup_column": "reward_classifier_label",
+    "label_invert": false,
+
+    "input_features": {
+      "observation.images.top": {
+        "type": "VISUAL",
+        "shape": [3, 480, 848]
+      },
+      "observation.images.left_hand": {
+        "type": "VISUAL",
+        "shape": [3, 480, 848]
+      },
+      "observation.images.right_hand": {
+        "type": "VISUAL",
+        "shape": [3, 480, 848]
+      }
+    }
+  },
+
+  "batch_size": 32,
+  "num_workers": 0,
+  "steps": 3000,
+  "log_freq": 10,
+  "eval_freq": 200,
+  "save_freq": 300,
+  "save_checkpoint": true,
+  "seed": 2,
+  "resume": false,
+
+  "wandb": {
+    "enable": false,
+    "project": "reward-classifier",
+    "disable_artifact": true
+  },
+
+  "output_dir": "/media/wu/4750eeba-1063-264f-b8b7-b4e41ee3cc2f/hil-serl/reward_classifier_terminal_train",
+  "job_name": "arx_reward_classifier_terminal_train"
+}
