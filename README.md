@@ -1,7 +1,6 @@
 # code-and-md
 
-此仓库保存 LeRobot 当前代码库和 usage_cn 中文 Markdown 文档。
-
-文件夹：lerobot_code_usage_cn/
+文件夹：lerobot_code_usage_cn/保存 LeRobot 当前代码库和 usage_cn 中文 Markdown 文档。
+文件夹：transfer_package_dextrah_simtoolreal_20260814保存dextrah与simtoolreal当前代码库和中文 Markdown 文档。
 lerobot_code_usage_cn_20260814_162055.zip是lerobot代码库压缩包
 transfer_package_dextrah_simtoolreal_20260814.zip是dextrah与simtoolreal的代码库压缩包
